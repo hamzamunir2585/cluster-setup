@@ -1,0 +1,108 @@
+# .bashrc
+
+# -------------------------------------
+# Source global definitions
+# -------------------------------------
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# -------------------------------------
+# User specific environment
+# -------------------------------------
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# -------------------------------------
+# Java Environment (Multi-version)
+# -------------------------------------
+
+# Default Java (17)
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-17.0.17.0.10-1.el8.x86_64
+export PATH=$JAVA_HOME/bin:$PATH
+
+# Shortcuts for switching between Java versions
+alias usejava8='export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk && export PATH=$JAVA_HOME/bin:$PATH && echo "Switched to Java 8" && java -version'
+alias usejava17='export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-17.0.17.0.10-1.el8.x86_64 && export PATH=$JAVA_HOME/bin:$PATH && echo "Switched to Java 17" && java -version'
+
+# -------------------------------------
+# Hadoop Environment
+# -------------------------------------
+export HADOOP_HOME=/data/hadoop
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+# -------------------------------------
+# Spark Environment
+# -------------------------------------
+export SPARK_HOME=/data/spark
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+
+# -------------------------------------
+# HBase Environment
+# -------------------------------------
+export HBASE_HOME=/data/hbase
+export PATH=$PATH:$HBASE_HOME/bin
+
+# -------------------------------------
+# Hive Environment
+# -------------------------------------
+export HIVE_HOME=/data/hive
+export HIVE_CONF_DIR=$HIVE_HOME/conf
+export PATH=$PATH:$HIVE_HOME/bin
+
+# -------------------------------------
+# Sqoop Environment
+# -------------------------------------
+export SQOOP_HOME=/usr/local/sqoop
+export PATH=$PATH:$SQOOP_HOME/bin
+
+# -------------------------------------
+# Storm Environment
+# -------------------------------------
+export STORM_HOME=/opt/storm
+export PATH=$PATH:$STORM_HOME/bin
+export PATH=$PATH:/data/zookeeper/bin
+
+# -------------------------------------
+# Pig Environment
+# -------------------------------------
+export PIG_HOME=/opt/pig-0.18.0
+export PATH=$PATH:$PIG_HOME/bin
+
+# -------------------------------------
+# Kafka Environment
+# -------------------------------------
+export KAFKA_HOME=/opt/kafka
+export PATH=$PATH:$KAFKA_HOME/bin
+
+# -------------------------------------
+# Apache Flume Environment
+# -------------------------------------
+export FLUME_HOME=/data/flume
+export PATH=$PATH:$FLUME_HOME/bin
+
+# -------------------------------------
+# Apache Oozie Environment
+# -------------------------------------
+export OOZIE_HOME=/data/oozie
+export PATH=$PATH:$OOZIE_HOME/bin
+export OOZIE_CONF_DIR=$OOZIE_HOME/conf
+export CATALINA_HOME=$OOZIE_HOME/tomcat
+
+# -------------------------------------
+# Optional alias to verify setup
+# -------------------------------------
+alias oozie-version='$OOZIE_HOME/bin/oozie version'
+export OOZIE_HOME=/opt/oozie/client/target/oozie-client-5.2.1-client/oozie-client-5.2.1
+export PATH=$OOZIE_HOME/bin:$PATH
+export LUCENE_HOME=/opt/lucene/lucene-10.3.1
+export CLASSPATH=$LUCENE_HOME/core/lucene-core-10.3.1.jar:$LUCENE_HOME/queryparser/lucene-queryparser-10.3.1.jar:$LUCENE_HOME/analysis/common/lucene-analyzers-common-10.3.1.jar:$CLASSPATH
