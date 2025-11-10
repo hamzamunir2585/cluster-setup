@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+    <!-- HBase root directory on HDFS -->
+    <property>
+        <name>hbase.rootdir</name>
+        <value>hdfs://localhost:9000/hbase</value>
+        <description>HBase stores data in HDFS under this directory.</description>
+    </property>
+
+    <!-- Run in distributed mode -->
+    <property>
+        <name>hbase.cluster.distributed</name>
+        <value>true</value>
+        <description>Set to true when running HBase on top of Hadoop.</description>
+    </property>
+
+    <!-- ZooKeeper quorum -->
+    <property>
+        <name>hbase.zookeeper.quorum</name>
+        <value>localhost</value>
+        <description>ZooKeeper server hostname(s).</description>
+    </property>
+
+    <!-- ZooKeeper data directory -->
+    <property>
+        <name>hbase.zookeeper.property.dataDir</name>
+        <value>/data/zookeeper</value>
+        <description>Location to store ZooKeeper data files.</description>
+    </property>
+
+    <!-- HBase Master info port -->
+    <property>
+        <name>hbase.master.info.port</name>
+        <value>16010</value>
+    </property>
+
+    <!-- HBase RegionServer info port -->
+    <property>
+        <name>hbase.regionserver.info.port</name>
+        <value>16030</value>
+    </property>
+
+    <!-- HBase znode parent path in ZooKeeper -->
+    <property>
+        <name>zookeeper.znode.parent</name>
+        <value>/hbase</value>
+    </property>
+
+</configuration>
+
