@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<configuration>
+
+    <!-- Default filesystem URI -->
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+
+    <!-- Temporary directory for Hadoop -->
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/usr/local/hadoop/tmp</value>
+        <description>A base for other temporary directories.</description>
+    </property>
+
+</configuration>
+
