@@ -1,0 +1,49 @@
+# ================================
+# Flume Agent Configuration File
+# ================================
+
+# Name the agent, sources, sinks, and channels
+agent1.sources = source1
+agent1.sinks = sink1
+agent1.channels = channel1
+
+# ================================
+# Source Configuration
+# ================================
+# Using Exec Source to tail log file
+agent1.sources.source1.type = exec
+agent1.sources.source1.command = tail -F /var/log/messages
+agent1.sources.source1.channels = channel1
+
+# ================================
+# Sink Configuration
+# ================================
+# HDFS sink to write events to HDFS
+agent1.sinks.sink1.type = hdfs
+agent1.sinks.sink1.channel = channel1
+
+# HDFS path where events will be stored
+agent1.sinks.sink1.hdfs.path = hdfs://localhost:9000/flume/logs/%Y/%m/%d/%H/
+
+# File prefix for output files
+agent1.sinks.sink1.hdfs.filePrefix = messages-
+
+# File suffix for output files
+agent1.sinks.sink1.hdfs.fileSuffix = .log
+
+# File roll options
+agent1.sinks.sink1.hdfs.rollInterval = 60        # seconds
+agent1.sinks.sink1.hdfs.rollSize = 0            # bytes, 0 = ignore
+agent1.sinks.sink1.hdfs.rollCount = 0           # events, 0 = ignore
+
+# Use local buffer for temporary writes
+agent1.sinks.sink1.hdfs.useLocalTimeStamp = true
+
+# ================================
+# Channel Configuration
+# ================================
+# Memory channel
+agent1.channels.channel1.type = memory
+agent1.channels.channel1.capacity = 1000
+agent1.channels.channel1.transactionCapacity = 100
+
