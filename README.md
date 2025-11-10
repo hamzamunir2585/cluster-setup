@@ -5,13 +5,13 @@ It provides a reference for understanding the installed packages, environment se
 
 ## Contents
 
-- `cluster_setup.md` – Detailed Markdown documentation of installed packages, environment variables, and services.
+- `cluster_setup.md` – Detailed Markdown documentation of installed packages, environment configuration, and services started.
 - `conf/` – Folder containing all modified configuration files, including Hadoop, Spark, HBase, Hive, and environment setup files.
 
 ## Purpose
 
-This repository serves as a reference for anyone using or maintaining the cluster.  
-It allows team members to replicate the setup, troubleshoot issues, and understand the cluster configuration.
+This documentation serves as a reference for anyone using or maintaining the cluster.  
+It helps team members understand the cluster setup and replicate or troubleshoot it if needed.
 
 ## Installed Packages / Services
 
