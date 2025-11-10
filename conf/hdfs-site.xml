@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<configuration>
+
+    <!-- Directory for NameNode metadata -->
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>/data/hadoop_data/hdfs/namenode</value>
+    </property>
+
+    <!-- Directory for DataNode storage -->
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>/data/hadoop_data/hdfs/datanode</value>
+    </property>
+
+    <!-- Number of data replicas (1 for single-node setup) -->
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+
+    <!-- Enable HDFS file permission checks -->
+    <property>
+        <name>dfs.permissions.enabled</name>
+        <value>true</value>
+    </property>
+
+    <!-- NameNode Web UI (default port: 9870) -->
+    <property>
+        <name>dfs.namenode.http-address</name>
+        <value>localhost:9870</value>
+    </property>
+
+    <!-- DataNode Web UI (default port: 9864) -->
+    <property>
+        <name>dfs.datanode.http.address</name>
+        <value>localhost:9864</value>
+    </property>
+
+</configuration>
+
