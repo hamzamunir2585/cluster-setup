@@ -3,7 +3,7 @@
 This repository contains documentation and configuration files for a **single-machine Hadoop ecosystem cluster**.  
 It serves as a reference for understanding installed packages, environment setup, and running services.
 
-## 📂 Repository Structure
+## Repository Structure
 
 - `cluster_setup.md` – Detailed documentation of installed packages, environment variables, and services.
 - `conf/` – Folder containing all modified configuration files for Hadoop, Spark, HBase, Hive, and more.
@@ -25,15 +25,16 @@ It serves as a reference for understanding installed packages, environment setup
 - Lucene
 - Zookeeper
 
-## 📝 Notes
+## Notes
 
 - All packages are configured to work on a single-machine cluster.  
 - Modified configuration files are available in the `conf/` folder.  
 - The cluster is ready for running Hadoop ecosystem workflows.
 
-## 🚀 Purpose
+## Purpose
 
 This documentation helps team members:
 - Understand the cluster setup.  
 - Replicate or troubleshoot the environment.  
 - Use the configuration files as a reference for maintenance or new deployments.
+
